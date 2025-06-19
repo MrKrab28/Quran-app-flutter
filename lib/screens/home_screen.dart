@@ -23,8 +23,7 @@ class HomeScreen extends StatelessWidget {
           child: NestedScrollView(
             headerSliverBuilder:
                 (context, innerBoxIsScrolled) => [
-                  SliverToBoxAdapter(child: _greeting()
-                  ),
+                  SliverToBoxAdapter(child: _greeting()),
                   SliverAppBar(
                     pinned: true,
                     elevation: 0,
@@ -195,6 +194,8 @@ class HomeScreen extends StatelessWidget {
       ],
     ),
   );
+  
+  
   BottomNavigationBar _bottomNavigationBar() => BottomNavigationBar(
     type: BottomNavigationBarType.fixed,
     showSelectedLabels: false,

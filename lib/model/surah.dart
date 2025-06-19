@@ -1,14 +1,14 @@
 // To parse this JSON data, do
 //
-//     final listSurah = listSurahFromJson(jsonString);
+//     final surah = surahFromJson(jsonString);
 
 import 'dart:convert';
 
-List<ListSurah> listSurahFromJson(String str) => List<ListSurah>.from(json.decode(str).map((x) => ListSurah.fromJson(x)));
+List<Surah> surahFromJson(String str) => List<Surah>.from(json.decode(str).map((x) => Surah.fromJson(x)));
 
-String listSurahToJson(List<ListSurah> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String surahToJson(List<Surah> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class ListSurah {
+class Surah {
     int nomor;
     String nama;
     String namaLatin;
@@ -18,7 +18,7 @@ class ListSurah {
     String deskripsi;
     String audio;
 
-    ListSurah({
+    Surah({
         required this.nomor,
         required this.nama,
         required this.namaLatin,
@@ -29,7 +29,7 @@ class ListSurah {
         required this.audio,
     });
 
-    factory ListSurah.fromJson(Map<String, dynamic> json) => ListSurah(
+    factory Surah.fromJson(Map<String, dynamic> json) => Surah(
         nomor: json["nomor"],
         nama: json["nama"],
         namaLatin: json["nama_latin"],
